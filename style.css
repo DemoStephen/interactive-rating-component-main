@@ -1,0 +1,101 @@
+:root{
+    --mar-top-butom: 1rem;
+    --padding: 15px;
+    --border-rad : 20px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 1440px;
+    height: 100vh;
+    color: hsl(217, 12%, 63%);
+    background-color: black;
+    font-family: sans-serif;
+    font-size: 15px;
+    
+}
+section{
+    background-color: hsl(213, 19%, 18%);
+    padding: 2rem;
+    width: 375px;
+    border-radius: var(--border-rad);
+    margin: 20vh auto 1rem auto;
+}
+#ratingStart img{
+    padding: var(--padding);
+    background-color: hsla(25, 97%, 53%, 0.105);
+    border-radius: 50px;
+}
+#ratingStart h1{
+    margin: var(--mar-top-butom) 0;
+    color: hsl(0, 0%, 100%);
+}
+#ratingStart ul{
+    margin: var(--mar-top-butom) 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+#ratingStart ul li{
+    padding: var(--padding) 20px;
+    border-radius: 50px;
+    background-color: hsla(217, 12%, 63%, 0.307);
+    transition: 0.25s;
+    cursor: pointer;
+}
+#ratingStart ul li:hover{
+    background-color: hsl(25, 97%, 53%);
+    color: white;
+}
+
+#ratingStart button{
+    width: 100%;
+    padding: var(--padding);
+    border-radius: var(--border-rad);
+    border: none;
+    background-color: hsl(25, 97%, 53%);
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.25s;
+    outline: none;
+}
+#ratingStart button:hover{
+    background-color:white;
+    color: hsl(25, 97%, 53%);
+}
+
+#thankYouStart{
+    text-align: center;
+    display: none;
+}
+
+#thankYouStart #doveBg{
+    background-color: hsla(217, 12%, 63%, 0.307);
+    color: hsl(25, 97%, 53%);
+    font-weight: 600;
+    padding: 10px;
+    width: 70%;
+    margin: var(--mar-top-butom) auto;
+    border-radius: var(--border-rad);
+}
+#thankYouStart h1{
+    margin: var(--mar-top-butom) 0;
+    color: hsl(0, 0%, 100%);
+}
+p{
+    line-height: 20px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: white; }
+@media (width < 700px){
+    body{width: 100%;
+    }
+    section{
+        margin: 10vh auto;
+        margin-bottom: 1rem;
+    }
+}
