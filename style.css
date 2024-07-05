@@ -28,6 +28,18 @@ section{
     padding: var(--padding);
     background-color: hsla(25, 97%, 53%, 0.105);
     border-radius: 50px;
+    animation: rotate 2s infinite linear;
+}
+#ratingStart img:hover{
+    animation-play-state: paused;
+}
+@keyframes rotate{
+    from{
+        rotate: 0deg;
+    }
+    to{
+        rotate: 360deg;
+    }
 }
 #ratingStart h1{
     margin: var(--mar-top-butom) 0;
@@ -50,7 +62,6 @@ section{
     background-color: hsl(25, 97%, 53%);
     color: white;
 }
-
 #ratingStart button{
     width: 100%;
     padding: var(--padding);
@@ -90,7 +101,7 @@ p{
 }
 
 .attribution { font-size: 11px; text-align: center; }
-.attribution a { color: white; }
+.attribution a { color: hsl(228, 45%, 44%); }
 @media (width < 700px){
     body{width: 100%;
     }
