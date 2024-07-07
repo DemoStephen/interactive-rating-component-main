@@ -61,23 +61,31 @@ p{
 }
 .container{
     margin: var(--mar-top-butom) 0;
+    cursor: pointer;
+    width: 3.125rem;
+    height: 3.125rem;
+    z-index: 100;
+}
+label{
+    cursor: pointer;
     background-color: hsla(217, 12%, 63%, 0.307);
-    border-radius: 50%;
     width: 3.125rem;
     height: 3.125rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    border-radius: 50%;
+
 }
-label{
-    cursor: pointer;
+input[type='radio']{
+    display: none;
 }
-.container input[type='radio']{
-    display: none;    
-}
-.container:hover{
+
+.container label:hover{
     background-color: hsl(25, 97%, 53%);
+}
+.container input[type='radio']:checked+label{
+    background-color: white;
 }
 form button{
     width: 100%;

@@ -12,9 +12,6 @@ for(const radioButton of radioButtons){
         value = radioButton.value;
         console.log(value)
     })
-    radioButton.addEventListener('click', ()=>{
-        radioButtons.style.color = 'red'
-    })
 }
 
 form.addEventListener('submit', (event)=>{
