@@ -1,18 +1,32 @@
-const firstSection = document.querySelector("#ratingStart")
-const secondSection = document.querySelector("#thankYouStart")
-const yourSelection = document.querySelector("#yourSelection")
-const CallToActionButton = document.querySelector("button")
-const className = document.querySelectorAll(".options")
+const dataRatingStart = document.querySelector('[data-rating-start]');
+const dataThankYouState = document.querySelector('[data-thankYou-state]');
+const form = document.querySelector('[data-form]');
+const radioButtons = document.querySelectorAll('[data-input]');
+const errorMessage = document.querySelector('[data-error]');
+const yourSelection = document.querySelector('#yourSelection');
 
-className.forEach(function(eachClass){
-    eachClass.addEventListener('click', (event)=>{
-        eachClass.style.backgroundColor = "hsl(0, 0%, 100%)"
-        eachClass.style.color = "black"
-        yourSelection.innerText = eachClass.innerText
+let value = null;
+
+for(const radioButton of radioButtons){
+    radioButton.addEventListener('change',()=>{
+        value = radioButton.value;
+        console.log(value)
     })
-})
+    radioButton.addEventListener('click', ()=>{
+        radioButtons.style.color = 'red'
+    })
+}
 
-CallToActionButton.addEventListener('click', (event)=>{
-    firstSection.style.display = "none"
-    secondSection.style.display = "block"
-})
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+    if(!value){
+        errorMessage.innerText = 'Please select a rating'
+        setTimeout(()=>{
+            errorMessage.innerText = "";
+        }, 5000)
+        return
+    }
+    dataRatingStart.classList.add('d-none');
+    dataThankYouState.classList.remove('d-none');
+    yourSelection.innerText = `${value}`
+});

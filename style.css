@@ -1,112 +1,117 @@
 :root{
-    --mar-top-butom: 1rem;
-    --padding: 15px;
-    --border-rad : 20px;
+    --mar-top-butom: 1.5rem;
+    --padding: 1rem;
+    --border-rad : 1.25rem;
+    --bg-color: hsl(213, 19%, 18%);
+    --text-color: hsl(217, 12%, 63%);
+    --black: hsl(0, 0%, 0%);
+    --white: hsl(0, 0%, 100%);
 }
-*{
+*,
+*::before,
+*::after{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    width: 1440px;
-    height: 100vh;
-    color: hsl(217, 12%, 63%);
-    background-color: black;
+    min-height: 100vh;
+    color: var(--text-color);
+    background-color: var(--black);
     font-family: sans-serif;
-    font-size: 15px;
-    
+    font-size: 0.9375rem;
+    display: flex;
+    justify-content: center;
+}
+main{
+    margin: auto;
 }
 section{
-    background-color: hsl(213, 19%, 18%);
+    background-color: var(--bg-color);
     padding: 2rem;
-    width: 375px;
+    margin: auto;
+    width: clamp(22.5rem, 100% - 40px, 25rem);
     border-radius: var(--border-rad);
-    margin: 20vh auto 1rem auto;
 }
-#ratingStart img{
-    padding: var(--padding);
-    background-color: hsla(25, 97%, 53%, 0.105);
-    border-radius: 50px;
-    animation: rotate 2s infinite linear;
-}
-#ratingStart img:hover{
-    animation-play-state: paused;
-}
-@keyframes rotate{
-    from{
-        rotate: 0deg;
-    }
-    to{
-        rotate: 360deg;
-    }
-}
-#ratingStart h1{
-    margin: var(--mar-top-butom) 0;
-    color: hsl(0, 0%, 100%);
-}
-#ratingStart ul{
-    margin: var(--mar-top-butom) 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-}
-#ratingStart ul li{
-    padding: var(--padding) 20px;
-    border-radius: 50px;
-    background-color: hsla(217, 12%, 63%, 0.307);
-    transition: 0.25s;
-    cursor: pointer;
-}
-#ratingStart ul li:hover{
-    background-color: hsl(25, 97%, 53%);
-    color: white;
-}
-#ratingStart button{
-    width: 100%;
-    padding: var(--padding);
-    border-radius: var(--border-rad);
-    border: none;
-    background-color: hsl(25, 97%, 53%);
-    letter-spacing: 1px;
-    font-weight: 600;
-    transition: 0.25s;
-    outline: none;
-}
-#ratingStart button:hover{
-    background-color:white;
-    color: hsl(25, 97%, 53%);
-}
-
-#thankYouStart{
-    text-align: center;
+.d-none{
     display: none;
 }
+.d-block{
+    display: block;
+}
+h1{
+    margin: var(--mar-top-butom) 0;
+    color: var(--white);
+}
 
-#thankYouStart #doveBg{
+p{
+    line-height: 1.25rem;
+}
+
+#startIcon,#goBack{
+    padding: var(--padding);
+    background-color: hsla(25, 97%, 53%, 0.105);
+    border-radius: 50%;
+    width: fit-content;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+    margin: var(--mar-top-butom) 0;
+    background-color: hsla(217, 12%, 63%, 0.307);
+    border-radius: 50%;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+label{
+    cursor: pointer;
+}
+.container input[type='radio']{
+    display: none;    
+}
+.container:hover{
+    background-color: hsl(25, 97%, 53%);
+}
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0.75rem;
+    text-transform: uppercase;
+    border-radius: 1.5rem;
+    background-color: hsl(25, 97%, 53%);
+    cursor: pointer;
+}
+#thankYouStart{
+    text-align: center;
+}
+#mainImg{
+    margin: 0 0  var(--mar-top-butom) 0;
+}
+#greyBg{
     background-color: hsla(217, 12%, 63%, 0.307);
     color: hsl(25, 97%, 53%);
     font-weight: 600;
-    padding: 10px;
-    width: 70%;
-    margin: var(--mar-top-butom) auto;
+    padding: 0.625rem 1.3rem;
+    width: fit-content;
+    margin: auto;
     border-radius: var(--border-rad);
 }
-#thankYouStart h1{
-    margin: var(--mar-top-butom) 0;
-    color: hsl(0, 0%, 100%);
+.error{
+    color: red;
+    text-align: center;
 }
-p{
-    line-height: 20px;
-}
+.attribution { font-size: 11px; text-align: center; margin: calc(var(--mar-top-butom) *0.5) 0;}
+.attribution a { color: #fff; }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-@media (width < 700px){
-    body{width: 100%;
-    }
-    section{
-        margin: 10vh auto;
-        margin-bottom: 1rem;
-    }
+.onclickStyling{
+    background-color: var(--white);
+    color: var(--black);
 }
