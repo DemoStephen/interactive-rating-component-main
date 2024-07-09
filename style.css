@@ -64,18 +64,14 @@ p{
     cursor: pointer;
     width: 3.125rem;
     height: 3.125rem;
-    z-index: 100;
-}
-label{
-    cursor: pointer;
-    background-color: hsla(217, 12%, 63%, 0.307);
-    width: 3.125rem;
-    height: 3.125rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-
+}
+label{
+    cursor: pointer;
+    background-color: hsla(217, 12%, 63%, 0.307);
 }
 input[type='radio']{
     display: none;
@@ -84,9 +80,9 @@ input[type='radio']{
 .container label:hover{
     background-color: hsl(25, 97%, 53%);
 }
-.container input[type='radio']:checked+label{
+/* .container input[type='radio']:checked+label{
     background-color: white;
-}
+} */
 form button{
     width: 100%;
     outline: none;

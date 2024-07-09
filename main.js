@@ -10,7 +10,6 @@ let value = null;
 for(const radioButton of radioButtons){
     radioButton.addEventListener('change',()=>{
         value = radioButton.value;
-        console.log(value)
     })
 }
 
