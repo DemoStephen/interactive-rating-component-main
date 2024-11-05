@@ -1,68 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Interactive rating component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <main>
 
+<body class="bg-gray-900 flex flex-col gap-4 min-h-screen items-center justify-center p-[5%]">
+  <main class="bg-slate-800 md:w-[30rem] p-8 rounded-3xl text-lg text-slate-500 font-bold">
     <!-- Rating state start -->
-    <section data-rating-start id="ratingStart">
-      <img src="./images/icon-star.svg" alt="start icon" id="startIcon" class="d-block">
-      <h1>How did we do?</h1>
-      <p>
+    <section class="w-full" data-rating>
+      <img src="/images/icon-star.svg" alt="star" class="p-5 bg-gray-700 rounded-full mb-8 hover:animate-spin">
+      <h1 class="text-slate-100 text-3xl font-bold">How did we do?</h1>
+      <p class="my-4">
         Please let us know how we did with your support request. All feedback is appreciated
         to help us improve our offering!
       </p>
-      <form data-form action="#">
-        <div class="options">
-          <label class="container">
-            <input data-input type="radio" name="option" id="one" value="1">
-            <label for="option">1</label>
+      <form action="#" data-form>
+        <label for="rating" class="flex justify-between my-7">
+          <label for="rating1" class="flex">
+            <input data-input type="radio" value="1" name="rating" id="rating1" class="hidden peer">
+            <span
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-900 flex items-center justify-center cursor-pointer hover:bg-orange-500 text-slate-50 peer-checked:bg-white peer-checked:text-slate-900 peer">1</span>
           </label>
-          <label class="container">
-            <input data-input type="radio" name="option" id="two" value="2">
-            <label for="option">2</label>
+
+          <label for="rating2" class="flex">
+            <input data-input type="radio" value="2" name="rating" id="rating2" class="hidden peer">
+            <span
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-900 flex items-center justify-center cursor-pointer hover:bg-orange-500 text-slate-50 peer-checked:bg-white peer-checked:text-slate-900 peer">2</span>
           </label>
-          <label class="container">
-            <input data-input type="radio" name="option" id="three" value="3">
-            <label for="option">3</label>
+
+          <label for="rating3" class="flex">
+            <input data-input type="radio" value="3" name="rating" id="rating3" class="hidden peer">
+            <span
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-900 flex items-center justify-center cursor-pointer hover:bg-orange-500 text-slate-50 peer-checked:bg-white peer-checked:text-slate-900 peer">3</span>
           </label>
-          <label class="container">
-            <input data-input type="radio" name="option" id="four" value="4">
-            <label for="option">4</label>
+
+          <label for="rating4" class="flex">
+            <input data-input type="radio" value="4" name="rating" id="rating4" class="hidden peer">
+            <span
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-900 flex items-center justify-center cursor-pointer hover:bg-orange-500 text-slate-50 peer-checked:bg-white peer-checked:text-slate-900 peer">4</span>
           </label>
-          <label class="container">
-            <input data-input type="radio" name="option" id="five" value="5">
-            <label for="option">5</label>
+
+          <label for="rating5" class="flex">
+            <input data-input type="radio" value="5" name="rating" id="rating5" class="hidden peer">
+            <span
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gray-900 flex items-center justify-center cursor-pointer hover:bg-orange-500 text-slate-50 peer-checked:bg-white peer-checked:text-slate-900">5</span>
           </label>
-        </div>
-        <button>Submit</button>
-        <p data-error class="error"></p>
+        </label>
+        <button class="w-full p-3 bg-orange-500 text-gray-900 rounded-full hover:bg-slate-100">Submit</button>
       </form>
+      <p data-error class=" text-red-500 text-sm text-center font-normal mt-2 hidden ">Select a rating</p>
     </section>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <section data-thankYou-state id="thankYouStart" class="d-none">
-     <!-- <img id="goBack" src="./images/icon-star.svg" alt="goback" class="d-block"> -->
-     <img src="./images/illustration-thank-you.svg" alt="thank you image" id="mainImg">
-     <p id="greyBg">You selected <span id="yourSelection"></span> out of 5</p>
-     <h1>Thank you!</h1>
-     <p>We appreciate you taking the time to give a rating. If you ever need more support, 
-       don’t hesitate to get in touch!
-     </p>
+    <section data-thanks class=" hidden text-center w-full ">
+      <img src="/images/illustration-thank-you.svg" alt="Thank you" class="m-auto mb-7">
+      <p class="text-orange-500 p-3 bg-slate-700 w-full md:w-3/4 m-auto rounded-full">You selected <span
+          data-rate></span>
+        out of 5</p>
+      <h2 class="text-slate-100 text-3xl font-bold mt-8">Thank you!</h2>
+      <p class="mt-4">
+        We appreciate you taking the time to give a rating. If you ever need more support,
+        don’t hesitate to get in touch!
+      </p>
     </section>
     <!-- Thank you state end -->
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Adewale Stephen</a>.
-    </div>
   </main>
-  <script src="main.js"></script>
+
+  <footer class="text-white text-sm">
+    Coded by <a href="https://www.linkedin.com/in/codewithstephen/">Stephen Adewale</a>.
+  </footer>
+  <script type="module" src="./main.js"></script>
 </body>
+
 </html>
