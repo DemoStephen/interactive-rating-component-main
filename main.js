@@ -1,28 +1,21 @@
-const dataRatingStart = document.querySelector('[data-rating-start]');
-const dataThankYouState = document.querySelector('[data-thankYou-state]');
-const form = document.querySelector('[data-form]');
-const radioButtons = document.querySelectorAll('[data-input]');
-const errorMessage = document.querySelector('[data-error]');
-const yourSelection = document.querySelector('#yourSelection');
-
-let value = null;
-
-for(const radioButton of radioButtons){
-    radioButton.addEventListener('change',()=>{
-        value = radioButton.value;
-    })
-}
-
-form.addEventListener('submit', (event)=>{
-    event.preventDefault();
-    if(!value){
-        errorMessage.innerText = 'Please select a rating'
-        setTimeout(()=>{
-            errorMessage.innerText = "";
-        }, 5000)
-        return
+const form = document.querySelector("[data-form]");
+const inputs = document.querySelectorAll("[data-input]");
+const rate = document.querySelector("[data-rate]");
+const thanks = document.querySelector("[data-thanks]");
+const rating = document.querySelector("[data-rating]");
+const message = document.querySelector("[data-error]");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  inputs.forEach((input) => {
+    if (input.checked) {
+      rate.innerText = input.value;
+      rating.classList.add("hidden");
+      thanks.classList.remove("hidden");
+    } else {
+      message.classList.remove("hidden");
+      setTimeout(() => {
+        message.classList.add("hidden");
+      }, 3000);
     }
-    dataRatingStart.classList.add('d-none');
-    dataThankYouState.classList.remove('d-none');
-    yourSelection.innerText = `${value}`
+  });
 });
